@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+		<h1>Hello {{ username }}</h1>
+
+		<div class="media">
+		  <a class="pull-left" href="#">
+		  	{% if avatar == "false" %}
+		    <img class="media-object" src="/static/images/default_user.png" alt="...">
+						    
+		    {% else %}
+		    <img class="media-object" src="/img?img_id={{key}}" alt="..."> 
+		    {% endif %}
+		  </a>
+		  <div class="media-body">
+		    {{ email }}
+		  </div>
+		</div>
+
+		<br>
+		<h4>Change avatar</h4>
+
+		<form role="form" method="post" enctype="multipart/form-data">
+			<div class="form-group">
+			    <input type="file" name="avatar">
+			  </div>
+			<button type="submit" class="btn btn-primary">Send</button>
+		</form>
+
+		{% if message %}
+			<h4 class="alert alert-danger">{{ message }}</h4>
+		{% endif %}
+
+		<a href="/logout" class="btn">Salir</a>
+
+{% endblock %}

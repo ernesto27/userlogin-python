@@ -1,0 +1,10 @@
+#wrap-form{
+	width: 60%;
+	margin-top: 40px;
+}
+
+.error-form{
+	color:red;
+	font-weight: bold;
+	margin-top: 5px;	
+}
